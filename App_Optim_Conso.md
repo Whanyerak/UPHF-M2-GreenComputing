@@ -1,0 +1,4 @@
+# Green Computing | Application d'analyse et gestion des performances par processus
+
+<p style='text-align: justify;'>L'objectif de cette solution est d'analyser les applications utilisées par l'utilisateur et d'en optimiser la consommation d'énergie. Nous travaillons ici sous Windows avec le langage Powershell.<br><br>Powershell étant nativement fait pour intéragir avec l'OS et ses periphériques/fonctionnalités, cet outil nous paraissait le plus approprié à une telle application, notamment en terme de ressources et de gestion des processus. De plus Powershell est installé de base sous Windows 10, aucune configuration supplémentaire n'est donc nécessaire pour son utilisation.<br><br>Pour ce faire, un premier script dont l'objectif est d'analyser les applications et leurs performances a été développé.
+
