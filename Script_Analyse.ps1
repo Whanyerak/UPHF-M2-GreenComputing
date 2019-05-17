@@ -16,13 +16,14 @@ do
             @{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
             @{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
             @{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
-            Id, ProcessName -AutoSize| Out-String
+            Id, ProcessName -AutoSize | Out-String
 
         $total = $total + $process
 
         #echo $total
-
+        $process
         Start-Sleep -Seconds 1
+        echo "en cours"
     }
     Catch
     {
