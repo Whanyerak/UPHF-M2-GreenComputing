@@ -7,15 +7,22 @@
 Start-Process $Title #debug
 $log = ""
 $process = Get-Process -Name $Title
-$file = $Title.ToString() + ".txt"
 $DateDebut = Get-Date
+
+$path = "workingFiles\"
+If(!(test-path $path))
+{
+      New-Item -ItemType Directory -Force -Path $path
+}
+$file = "workingFiles\" + $Title.ToString() + $DateDebut.ToString("yyyyMMddhhmmss") + ".txt"
 "Date of process start : " + $DateDebut.ToString()  > $file
 "ProcessName`tCPU`n" >> $file
 
 while ($process)
 {
    try{
-       $process = Get-Process -Name $Title -ErrorAction Stop | Select-Object ProcessName, CPU
+       $process = Get-Process -Name $Title -ErrorAction Stop
+
        "`n" + $process[0].ProcessName + "`t`t" + $process[0].CPU >> $file
 
        Start-Sleep -Seconds 1
