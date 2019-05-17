@@ -4,34 +4,35 @@
    [Parameter(Mandatory)]
    $Title
 )
+Start-Process $Title #debug
+$log = ""
+$process = Get-Process -Name $Title
+$DateDebut = Get-Date
 
-$total =""
-
-do
+$path = "workingFiles\"
+If(!(test-path $path))
 {
-    Try {
-        $process = Get-Process -Name $Title -ErrorAction Stop | Format-Table `
-            @{Label = "NPM(K)"; Expression = {[int]($_.NPM / 1024)}},
-            @{Label = "PM(K)"; Expression = {[int]($_.PM / 1024)}},
-            @{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
-            @{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
-            @{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
-            Id, ProcessName -AutoSize | Out-String
+      New-Item -ItemType Directory -Force -Path $path
+}
+$file = "workingFiles\" + $Title.ToString() + $DateDebut.ToString("yyyyMMddhhmmss") + ".txt"
+"Date of process start : " + $DateDebut.ToString()  > $file
+"ProcessName`tCPU`n" >> $file
 
-        $total = $total + $process
+while ($process)
+{
+   try{
+       $process = Get-Process -Name $Title -ErrorAction Stop
 
-        #echo $total
-        $process
-        Start-Sleep -Seconds 1
-        echo "en cours"
+       "`n" + $process[0].ProcessName + "`t`t" + $process[0].CPU >> $file
+
+       Start-Sleep -Seconds 1
     }
-    Catch
-    {
-        echo "pas en cours"
-        Start-Sleep -Seconds 1
+    catch{
+        #écriture dans le fichier
         break
     }
+}
+$DateFin = Get-Date
+"Date of process end : " + $DateFin.ToString() >> $file
 
-} while ($process)
-
-echo $total
+"Temps écoulé : " + ((Get-Date $DateFin) – (Get-Date $DateDebut)).tostring() >> $file
