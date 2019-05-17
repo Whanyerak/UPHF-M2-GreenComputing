@@ -1,0 +1,32 @@
+{
+		"netflix" : {
+			"luminosity" : 50,
+			"sound" : 50,
+			"CPU" : 4,
+			"Wi-Fi" : true 
+		},
+		"Deezer" : {
+			"luminosity" : 10,
+			"sound" : 50,
+			"CPU" : 4,
+			"Wi-Fi" : true 
+		},
+		"notepad" : {
+			"luminosity" : 100,
+			"sound" : 0,
+			"CPU" : 4,
+			"Wi-Fi" : false 
+		},
+		"firefox" : {
+			"luminosity" : 100,
+			"sound" : 10,
+			"CPU" : 4,
+			"Wi-Fi" : true 
+		},
+		"WinStore.App" : {
+			"luminosity" : 100,
+			"sound" : 0,
+			"CPU" : 4,
+			"Wi-Fi" : true 
+		}
+}
