@@ -1,4 +1,4 @@
-﻿$liste_app = @('firefox', 'notepad', 'sublime_text')
+﻿$liste_app = @('firefox', 'notepad', 'sublime_text', 'Deezer', 'WinStore.App')
 
 # Variable to infinite loop
 $olive = 1
@@ -6,9 +6,6 @@ $olive = 1
 Remove-Job *
 
 $job_running = $null
-$root_path = Get-Location
-$root_path = $root_path.ToString()
-$root_path
 
 do {
 
@@ -23,8 +20,7 @@ do {
 
             if ($job_running -eq $null) {
 
-                #$app = Start-Process powershell -ArgumentList ".\Script_Analyse.ps1 -Title $_" -PassThru -UseNewEnvironment
-                Start-Job -Name $_"_analyser" -FilePath .\Script_Analyse.ps1 -ArgumentList @($_,$root_path)
+                Start-Job -Name $_"_analyser" -FilePath C:\UPHF-M2-GreenComputing\Script_Analyse.ps1 -ArgumentList @($_, "C:\UPHF-M2-GreenComputing")
                 
             }
 

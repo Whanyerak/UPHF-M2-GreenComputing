@@ -28,5 +28,11 @@
 			"sound" : 0,
 			"CPU" : 4,
 			"Wi-Fi" : true 
+		},
+		"sublime_text" : {
+			"luminosity" : 100,
+			"sound" : 0,
+			"CPU" : 2,
+			"Wi-Fi" : false
 		}
 }

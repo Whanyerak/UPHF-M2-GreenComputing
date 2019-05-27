@@ -1,0 +1,2 @@
+﻿PowerShell -NoProfile -ExecutionPolicy Unrestricted -Command "& {Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Unrestricted -File "" C:\UPHF-M2-GreenComputing\Script_Set_Laptop.ps1""' -Verb RunAs}";
+PowerShell -NoProfile -ExecutionPolicy Unrestricted -Command "& {Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Unrestricted -File "" C:\UPHF-M2-GreenComputing\Script_Only_One.ps1""' -Verb RunAs}";

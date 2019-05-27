@@ -29,7 +29,6 @@ while ($process)
        Start-Sleep -Seconds 1
     }
     catch{
-        #écriture dans le fichier
         break
     }
 }
