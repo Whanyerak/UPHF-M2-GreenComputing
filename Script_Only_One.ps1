@@ -1,7 +1,7 @@
 ﻿$liste_app = @('firefox', 'notepad', 'sublime_text', 'Deezer', 'WinStore.App')
 
 # Variable to infinite loop
-$olive = 1
+$loop = 1
 
 Remove-Job *
 
@@ -47,4 +47,4 @@ do {
         
     }
 
-} while ($olive)
+} while ($loop)

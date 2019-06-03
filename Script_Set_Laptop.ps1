@@ -1,7 +1,7 @@
 ﻿$liste_app = @('firefox', 'notepad', 'sublime_text', 'Deezer', 'WinStore.App')
 
 # Variable to infinite loop
-$olive = 1
+$loop = 1
 
 Remove-Job *
 
@@ -27,9 +27,9 @@ do {
   exit
 }
 # Now running elevated so launch the script:
-& "C:\Users\Dupon\Desktop\UPHF-M2-GreenComputing\setLaptop.ps1" $apps
+& "C:\UPHF-M2-GreenComputing\setLaptop.ps1" $apps
 
     # Start-Process - powershell.exe ".\Desktop\UPHF-M2-GreenComputing\setLaptop.ps1"
     Start-Sleep -Seconds 1
     $apps = @()
-} while ($olive)
+} while ($loop)
