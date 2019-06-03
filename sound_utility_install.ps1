@@ -1,5 +1,5 @@
-# wget https://github.com/frgnca/AudioDeviceCmdlets/releases/download/v3.0/AudioDeviceCmdlets.dll -OutFile .\AudioDeviceCmdlets.dll
-# Start-Sleep 3
+wget https://github.com/frgnca/AudioDeviceCmdlets/releases/download/v3.0/AudioDeviceCmdlets.dll -OutFile .\Utilities\AudioDeviceCmdlets.dll
+Start-Sleep 3
 New-Item "$($profile | split-path)\Modules\AudioDeviceCmdlets" -Type directory -Force
 Start-Sleep 2
 Copy-Item ".\Utilities\AudioDeviceCmdlets.dll" "$($profile | split-path)\Modules\AudioDeviceCmdlets\AudioDeviceCmdlets.dll"
