@@ -1,5 +1,10 @@
 # Green Computing | Application d'analyse et gestion des performances par processus
 
+### Avant tout
+
+Afin de pouvoir utiliser le script, il vous faudra placer le dossier contenant les fichiers de l'application à la racine de votre disque C: en gardant bien le nom UPHF-M2-GreenComputing.
+
+
 ### A INSTALLER
 
 <p style='text-align: justify;'>
